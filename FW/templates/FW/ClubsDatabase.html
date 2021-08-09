@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'FW/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Clubs Database</title>
+</head>
+<body>
+    <h2>The list of the clubs in the database: </h2>
+    <table>
+        <tr>
+            <th><h4>No</h4></th>
+            <th><h4>Club</h4></th>
+            <th><h4>Country</h4></th>
+        </tr>
+    {% for club in object_list %}
+        <tr>
+            <th><h3>{{forloop.counter}}</h3></th>
+            <th><h3><a href="{% url 'FW:Club' club.id %}">{{club.club_name}}</a></h3></th>
+            <th><h3>{{club.country}}</h3></th>
+        </tr>
+    {% empty %}
+    </table>
+        <h2> No players available in the database</h2>
+    {% endfor %}
+    </table>
+</body>
+</html>

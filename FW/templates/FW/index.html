@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'FW/style.css' %}">
+    <title>FootballWRLD</title>
+</head>
+<body>
+    <center><h1>Welcome to FootballWRLD</h1></center>
+    <br><br><br><br><br>
+    <section id="create">
+    <div class="Create">
+        <h3><a href="{% url 'FW:CreatePlayer' %}">Create a player</a></h3>
+        <h5>Create a new player by adding the name, nationality and club representation</h5>
+    </div>
+        <br><br><br><br><br><br>
+        <div class="Create">
+        <h3><a href="{% url 'FW:CreateClub' %}">Create a Club</a></h3>
+        <h5>Use the filters in order to find a player</h5>
+        <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    </section>
+    <section id="features">
+    <div class="Features">
+        <h3><a href="{% url 'FW:Draft' %}">Draft</a></h3>
+        <h5>Pick your 5-man-team</h5>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="Features">
+        <h3><a href="{% url 'FW:FilterPlayer' %}">Filter players</a></h3>
+        <h5>Use the filters in order to find a player</h5>
+    </div>
+    </section>
+    <section id="databases">
+    <div class="Databases">
+        <h3><a href="{% url 'FW:PlayersDatabase' %}">Check the players' database</a></h3>
+        <h5>Use the filters in order to find a player</h5>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="Databases">
+        <h3><a href="{% url 'FW:ClubsDatabase' %}">Check the clubs database</a></h3>
+        <h5>Use the filters in order to find a player</h5>
+    </div>
+    <br><br><br><br><br><br>
+        </section>
+    <br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<footer id="Footer">
+    FootballWRLD
+    <br>
+    2021
+</footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'FW/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Player Creation</title>
+</head>
+<body>
+<h2>Create a player</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+       <input type="submit" value="Create" class="submit-button">
+
+    </form>
+</body>
+</html>

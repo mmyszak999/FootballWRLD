@@ -1,0 +1,119 @@
+body{
+    background-color: black;
+    color: lime;
+    font-family: helvetica;
+}
+
+h1{
+   color: red;
+   position: absolute;
+   text-align: center;
+   margin-left: 37%;
+   font-family: Tahoma;
+}
+
+.Create{
+    position: absolute;
+    margin-left:3%;
+}
+
+#create{
+    height: 60%;
+    width: 30%;
+    position: absolute;
+    margin-left: 3%;
+    border: 1px solid red;
+}
+
+.Features{
+    position: absolute;
+    margin-left: 3%;
+}
+
+#features{
+    position: absolute;
+    margin-left: 35%;
+    width:30%;
+    height: 60%;
+    border: 1px solid blue;
+}
+
+.Databases{
+    position: absolute;
+    margin-left: 3%;
+ }
+
+#databases{
+    height: 60%;
+    width: 30%;
+    position: absolute;
+    margin-left:67%;
+    border: 1px solid green;
+
+}
+
+h5{
+    color: #fff555;
+}
+
+a:link{
+    color:blue;
+}
+
+a:visited {
+    color: lime;
+    text-decoration: none;
+}
+
+a:hover {
+    color: hotpink;
+    text-decoration: none;
+}
+
+a:active {
+    color: orange;
+}
+
+
+h2{
+    color: red;
+}
+
+p{
+    color: orange;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#Footer{
+    position: absolute;
+    color: white;
+    width: 94%;
+    height: 12%;
+    margin-top:13%;
+    margin-left:3%;
+    border: 1px solid orange;
+    font-family: helvetica;
+    font-size: 28px;
+    text-align: center;
+}
+
+.submit-button{
+     background: #0066A2;
+     color: white;
+     border-style: outset;
+     border-color: #0066A2;
+     height: 50px;
+     width: 100px;
+     font: bold 15px arial, sans-serif;
+     text-shadow:none;
+}
+
+table{
+    border: 1px solid red;
+    width: 90%;
+    margin-left: 3%;
+}
+
+th{
+    border: 1px solid red;
+}

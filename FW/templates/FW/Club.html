@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'FW/style.css' %}">
+    <meta charset="UTF-8">
+    <title>{{club.club_name}}</title>
+</head>
+<body>
+    <h2>{{club.club_name}}</h2>
+    <br>
+    <table>
+        <tr>
+            <th><h4>Club Name</h4></th>
+            <th><h4>{{club.club_name}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Year of foundation</h4></th>
+            <th><h4>{{club.foundation_date}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Country</h4></th>
+            <th><h4>{{club.country}}</h4></th>
+        </tr>
+    </table>
+</body>
+</html>

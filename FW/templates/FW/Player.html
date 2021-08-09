@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'FW/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Player</title>
+</head>
+<body>
+    <h2>{{player.name}} {{player.surname}}</h2>
+    <table>
+        <tr>
+            <th><h4>Player name</h4></th>
+            <th><h4>{{player.name}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Player surname</h4></th>
+            <th><h4>{{player.surname}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Nationality</h4></th>
+            <th><h4>{{player.nationality}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Year of birth</h4></th>
+            <th><h4>{{player.year_of_birth}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Club</h4></th>
+            <th><h4><a href="{% url 'FW:Club' player.club.id %}">{{player.club}}</a></h4></th>
+        </tr>
+        <tr>
+            <th><h4>Position</h4></th>
+            <th><h4>{{player.position}}</h4></th>
+        </tr>
+    </table>
+    <br>
+    <h3>Parameters</h3>
+    <table>
+        <tr>
+            <th><h4>Height</h4></th>
+            <th><h4>{{player.height}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Weight</h4></th>
+            <th><h4>{{player.weight}}</h4></th>
+        </tr>
+        <tr>
+            <th><h4>Foot</h4></th>
+            <th><h4>{{player.foot}}</h4></th>
+        </tr>
+    </table>
+</body>
+</html>
