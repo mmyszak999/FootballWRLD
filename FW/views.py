@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 
 from .forms import *
+
+import random
 
 
 class IndexView(generic.ListView):
@@ -84,5 +86,7 @@ class ClubsDatabaseView(generic.ListView):
         return Club.objects.all()
 
 
-def players_in_club(request):
-    return True
+def draw_a_player(request):
+    players_ = Player.objects.all()
+    random_player = random.choice(players_)["id"]
+    return get_object_or_404(Player, pk=random_player)

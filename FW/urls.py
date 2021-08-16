@@ -15,5 +15,7 @@ urlpatterns = [
     path('Player/<int:pk>', views.PlayerView.as_view(), name="Player"),
     path('PlayersDatabase/', views.PlayersDatabaseView.as_view(), name='PlayersDatabase'),
     path('ClubsDatabase/', views.ClubsDatabaseView.as_view(), name='ClubsDatabase'),
+    path('RandomPlayer/', views.draw_a_player, name='RandomPlayer'),
+
 ]
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
