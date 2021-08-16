@@ -1,9 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.views import generic
+from django.db.models.aggregates import Count
 
 from .forms import *
+from .models import *
 
 import random
+import math
 
 
 class IndexView(generic.ListView):
@@ -86,7 +89,7 @@ class ClubsDatabaseView(generic.ListView):
         return Club.objects.all()
 
 
-def draw_a_player(request):
+def get_random_player(request):
     players_ = Player.objects.all()
-    random_player = random.choice(players_)["id"]
-    return get_object_or_404(Player, pk=random_player)
+    random_player = random.choice(players_)
+    return render(request, 'FW/RandomPlayer.html', {'random_player': random_player})
