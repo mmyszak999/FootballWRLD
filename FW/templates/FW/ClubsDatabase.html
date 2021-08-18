@@ -19,7 +19,7 @@
     {% for club in object_list %}
         <tr>
             <th><h3>{{forloop.counter}}</h3></th>
-            <th><h3><a href="{% url 'FW:Club' club.id %}">{{club.club_name}}</a></h3></th>
+            <th><h3><a href="{% url 'FW:club' club.id %}">{{club.club_name}}</a></h3></th>
             <th><h3>{{club.country}}</h3></th>
         </tr>
     {% empty %}

@@ -20,8 +20,8 @@
     {% for player in object_list %}
         <tr>
             <th><h3>{{forloop.counter}}</h3></th>
-            <th><h3><a href="{% url 'FW:Player' player.id %}">{{player.name}} {{player.surname}} </a></h3></th>
-            <th><h3><a href="{% url 'FW:Club' player.club.id %}">{{player.club}}</a></h3></th>
+            <th><h3><a href="{% url 'FW:player' player.id %}">{{player.name}} {{player.surname}} </a></h3></th>
+            <th><h3><a href="{% url 'FW:club' player.club.id %}">{{player.club}}</a></h3></th>
             <th><h3>{{player.nationality}}</h3></th>
         </tr>
     {% empty %}

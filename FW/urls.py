@@ -7,15 +7,15 @@ from . import views
 app_name = 'FW'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('CreatePlayer/', views.createplayer, name='CreatePlayer'),
-    path('CreateClub/', views.createclub, name="CreateClub"),
-    path('Club/<int:pk>', views.ClubView.as_view(), name="Club"),
-    path('Draft/', views.DraftView.as_view(), name='Draft'),
-    path('FilterPlayer/', views.FilterView.as_view(), name='FilterPlayer'),
-    path('Player/<int:pk>', views.PlayerView.as_view(), name="Player"),
-    path('PlayersDatabase/', views.PlayersDatabaseView.as_view(), name='PlayersDatabase'),
-    path('ClubsDatabase/', views.ClubsDatabaseView.as_view(), name='ClubsDatabase'),
-    path('RandomPlayer/', views.get_random_player, name='RandomPlayer'),
+    path('create-player/', views.createplayer, name='create_player'),
+    path('create-club/', views.createclub, name="create_club"),
+    path('club/<int:pk>', views.ClubView.as_view(), name="club"),
+    path('draft/', views.DraftView.as_view(), name='draft'),
+    path('filter-player/', views.FilterView.as_view(), name='filter_player'),
+    path('player/<int:pk>', views.PlayerView.as_view(), name="player"),
+    path('players-database/', views.PlayersDatabaseView.as_view(), name='players_database'),
+    path('clubs-database/', views.ClubsDatabaseView.as_view(), name='clubs_database'),
+    path('random-player/', views.get_random_player, name='random_player'),
 
 ]
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
