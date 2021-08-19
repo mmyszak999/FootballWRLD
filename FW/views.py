@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import generic
 
 from .forms import *
+from .filters import PlayerFilter
 
 
 class IndexView(generic.ListView):
@@ -52,10 +53,16 @@ class DraftView(generic.ListView):
 
 
 class FilterView(generic.ListView):
+    model = Player
     template_name = 'FW/FilterPlayer.html'
 
     def get_queryset(self):
-        return True
+        return Player.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PlayerFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class PlayerView(generic.DetailView):
@@ -84,5 +91,3 @@ class ClubsDatabaseView(generic.ListView):
         return Club.objects.all()
 
 
-def players_in_club(request):
-    return True

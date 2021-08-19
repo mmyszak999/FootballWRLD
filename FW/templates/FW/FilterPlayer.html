@@ -9,6 +9,17 @@
     <title>Players' filter</title>
 </head>
 <body>
-Use filters below in order to find a player:
+<form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit" class="submit-button">Filter</button>
+</form>
+<ul>
+    {% for pl in filter.qs %}
+    <li>
+        <a href="{% url 'FW:Player' pl.id%}">{{pl.name}} {{pl.surname}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
