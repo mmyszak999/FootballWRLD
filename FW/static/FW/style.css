@@ -57,7 +57,7 @@ h5{
 }
 
 a:link{
-    color:blue;
+    color:DeepSkyBlue;
 }
 
 a:visited {
@@ -116,4 +116,23 @@ table{
 
 th{
     border: 1px solid red;
+}
+
+.FilterPlayer{
+    width: 65%;
+    position: relative;
+    margin-left: 31%;
+    margin-top: -53%;
+    height: 50%;
+    text-align: center;
+
+}
+
+.FilterForm{
+    margin-top: 1%;
+    width: 35%;
+    position: relative;
+    height: 50%;
+    text-align:left
+
 }
