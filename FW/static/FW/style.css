@@ -74,7 +74,6 @@ a:active {
     color: orange;
 }
 
-
 h2{
     color: red;
 }
@@ -82,6 +81,7 @@ h2{
 p{
     color: orange;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+    width: 54%;
 }
 
 #Footer{
@@ -116,4 +116,22 @@ table{
 
 th{
     border: 1px solid red;
+}
+
+.FilterPlayer{
+    width: 77%;
+    position: relative;
+    height: 50%;
+    text-align: center;
+    border: 1px solid green;
+
+}
+
+.FilterForm{
+    margin-top: 1%;
+    width: 21%;
+    position: relative;
+    height: 50%;
+    text-align:left;
+    float: left;
 }

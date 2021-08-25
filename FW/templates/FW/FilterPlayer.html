@@ -9,6 +9,26 @@
     <title>Players' filter</title>
 </head>
 <body>
-Use filters below in order to find a player:
+<form method="get" class="FilterForm">
+    {{ filter.form.as_p }}
+    <button type="submit" class="submit-button">Filter</button>
+</form>
+<table class="FilterPlayer">
+    <tr>
+    <th><h3>No.</h3></th>
+    <th><h3>Player</h3></th>
+    <th><h3>Club</h3></th>
+    <th><h3>Position</h3></th>
+    </tr>
+    {% for pl in filter.qs %}
+    <tr>
+        <th><h2>{{forloop.counter}}</h2></th>
+        <th><h2><a href="{% url 'FW:Player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2></th>
+        <th><h2> <a href="{% url 'FW:Club' pl.club.id%}">{{pl.club}}</a></h2></th>
+        <th><h2> {{pl.position}}</h2></th>
+    {% endfor %}
+    </tr>
+</table>
+
 </body>
 </html>

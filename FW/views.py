@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic
 
 from .forms import *
+from .filters import PlayerFilter
 
 import random
 
@@ -28,10 +29,16 @@ class DraftView(generic.ListView):
 
 
 class FilterView(generic.ListView):
+    model = Player
     template_name = 'FW/FilterPlayer.html'
 
     def get_queryset(self):
-        return True
+        return Player.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PlayerFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class PlayerView(generic.DetailView):
