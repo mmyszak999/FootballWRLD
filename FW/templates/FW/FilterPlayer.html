@@ -23,8 +23,8 @@
     {% for pl in filter.qs %}
     <tr>
         <th><h2>{{forloop.counter}}</h2></th>
-        <th><h2><a href="{% url 'FW:Player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2></th>
-        <th><h2> <a href="{% url 'FW:Club' pl.club.id%}">{{pl.club}}</a></h2></th>
+        <th><h2><a href="{% url 'FW:player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2></th>
+        <th><h2> <a href="{% url 'FW:club' pl.club.id%}">{{pl.club}}</a></h2></th>
         <th><h2> {{pl.position}}</h2></th>
     {% endfor %}
     </tr>
