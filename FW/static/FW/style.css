@@ -10,6 +10,7 @@ h1{
    text-align: center;
    margin-left: 37%;
    font-family: Tahoma;
+   border-radius: 14px 14px 14px 14px;
 }
 
 .Create{
@@ -22,7 +23,9 @@ h1{
     width: 30%;
     position: absolute;
     margin-left: 3%;
-    border: 1px solid red;
+    border: 4px solid orange;
+    border-radius: 14px 14px 14px 14px;
+    margin-top: 9%;
 }
 
 .Features{
@@ -35,12 +38,15 @@ h1{
     margin-left: 35%;
     width:30%;
     height: 60%;
-    border: 1px solid blue;
+    border: 4px solid DeepSkyBlue;
+    border-radius: 14px 14px 14px 14px;
+    margin-top: 9%;
 }
 
 .Databases{
     position: absolute;
     margin-left: 3%;
+    display: block;
  }
 
 #databases{
@@ -48,8 +54,9 @@ h1{
     width: 30%;
     position: absolute;
     margin-left:67%;
-    border: 1px solid green;
-
+    border: 4px solid green;
+    border-radius: 14px 14px 14px 14px;
+    margin-top: 9%;
 }
 
 h5{
@@ -81,20 +88,21 @@ h2{
 p{
     color: orange;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    width: 54%;
+    width: 40%;
 }
 
 #Footer{
     position: absolute;
     color: white;
-    width: 94%;
-    height: 12%;
-    margin-top:13%;
-    margin-left:3%;
-    border: 1px solid orange;
+    width: 96%;
+    height: 14%;
+    margin-top:38%;
+    margin-left:2%;
+    border: 4px solid purple;
     font-family: helvetica;
     font-size: 28px;
     text-align: center;
+    border-radius: 50px 50px 140px 140px;
 }
 
 .submit-button{
@@ -111,7 +119,7 @@ p{
 table{
     border: 1px solid red;
     width: 90%;
-    margin-left: 3%;
+    margin-left: 5%;
 }
 
 th{
@@ -120,18 +128,35 @@ th{
 
 .FilterPlayer{
     width: 77%;
-    position: relative;
+    position: absolute;
     height: 50%;
     text-align: center;
     border: 1px solid green;
+    margin-top: 9%;
+    margin-left:22%;
 
 }
 
 .FilterForm{
-    margin-top: 1%;
+    margin-top: 9%;
     width: 21%;
-    position: relative;
+    position: absolute;
     height: 50%;
     text-align:left;
     float: left;
+}
+
+.MainBanner{
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 0.5%;
+    width: 96%;
+    height: 14%;
+    border: 5px solid red;
+    border-radius: 140px 140px 50px 50px;
+}
+
+.MainBannerText{
+    text-align:center;
+    color: #E99090;
 }

@@ -9,8 +9,8 @@
     <title>Club Creation</title>
 </head>
 <body>
-<h2>Create a club</h2>
-    <form action="" method="post">
+<div class="MainBanner"><h1 class="MainBannerText">Create a club</h1></div>
+    <form action="" method="post" style="margin-top: 8%; position:absolute;" >
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Create" class="submit-button">
