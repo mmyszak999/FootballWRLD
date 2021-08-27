@@ -2,11 +2,11 @@ body{
     background-color: black;
     color: lime;
     font-family: helvetica;
+    min-width: 300px;
 }
 
 h1{
    color: red;
-   position: absolute;
    text-align: center;
    margin-left: 37%;
    font-family: Tahoma;
@@ -25,7 +25,7 @@ h1{
     margin-left: 3%;
     border: 4px solid orange;
     border-radius: 14px 14px 14px 14px;
-    margin-top: 9%;
+    margin-top: 3%;
 }
 
 .Features{
@@ -40,13 +40,12 @@ h1{
     height: 60%;
     border: 4px solid DeepSkyBlue;
     border-radius: 14px 14px 14px 14px;
-    margin-top: 9%;
+    margin-top: 3%;
 }
 
 .Databases{
     position: absolute;
     margin-left: 3%;
-    display: block;
  }
 
 #databases{
@@ -56,7 +55,7 @@ h1{
     margin-left:67%;
     border: 4px solid green;
     border-radius: 14px 14px 14px 14px;
-    margin-top: 9%;
+    margin-top: 3%;
 }
 
 h5{
@@ -92,11 +91,11 @@ p{
 }
 
 #Footer{
-    position: absolute;
+    position: relative;
     color: white;
     width: 96%;
     height: 14%;
-    margin-top:38%;
+    margin-top:32%;
     margin-left:2%;
     border: 4px solid purple;
     font-family: helvetica;
@@ -117,13 +116,13 @@ p{
 }
 
 table{
-    border: 1px solid red;
+    border: 3px solid red;
     width: 90%;
     margin-left: 5%;
 }
 
 th{
-    border: 1px solid red;
+    border: 2px solid red;
 }
 
 .FilterPlayer{
@@ -131,32 +130,33 @@ th{
     position: absolute;
     height: 50%;
     text-align: center;
-    border: 1px solid green;
-    margin-top: 9%;
+    border: 5px solid green;
+    margin-top: 1%;
     margin-left:22%;
 
 }
 
 .FilterForm{
-    margin-top: 9%;
-    width: 21%;
-    position: absolute;
+    margin-top: 1%;
+    width: 22%;
     height: 50%;
     text-align:left;
     float: left;
 }
 
 .MainBanner{
-    position: absolute;
     margin-left: 2%;
     margin-top: 0.5%;
     width: 96%;
-    height: 14%;
     border: 5px solid red;
     border-radius: 140px 140px 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .MainBannerText{
-    text-align:center;
     color: #E99090;
+    margin-left:4%;
 }
