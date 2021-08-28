@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="menu-container">
-    <div class="MainBanner"><h1 class="MainBannerText">Welcome to FootballWRLD</h1></div>
+    <div class="UpperBanner"><h1 class="UpperBannerText">Welcome to FootballWRLD</h1></div>
     <section id="create">
     <div class="Create">
         <h3><a href="{% url 'FW:create_player' %}">Create a player</a></h3>
@@ -29,7 +29,7 @@
     </div>
         <div class="Features" style="margin-top: 42%">
         <h3><a href="{% url 'FW:random_player' %}">Draw a random player</a></h3>
-        <h5>Use the link to draw a random player</h5>
+        <h5>Use the link to draw a random player </h5><h5>(another players are drawn after refreshing)</h5>
     </div>
     </section>
     <section id="databases">
@@ -43,9 +43,11 @@
     </div>
         </section>
 <footer id="Footer">
-    FootballWRLD
-    <br>
-    2021
+<ul>
+<li style="padding-left: 5%;"><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li style="padding-left: 22%;">FootballWRLD <br><center>2021</center></li>
+    <li style="padding-left: 77%; margin-top:-7%;">Soon...</li>
+</ul>
 </footer>
     </div>
 </body>

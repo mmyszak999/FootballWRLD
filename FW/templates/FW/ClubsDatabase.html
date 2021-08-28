@@ -9,7 +9,7 @@
     <title>Clubs Database</title>
 </head>
 <body>
-    <div class="MainBanner"><h1 class="MainBannerText">Clubs Database</h1></div>
+    <div class="UpperBanner"><h1 class="UpperBannerText">Clubs Database</h1></div>
     <table style="margin-top: 1%;">
         <tr>
             <th><h4>No</h4></th>
@@ -27,5 +27,10 @@
         <h2> No players available in the database</h2>
     {% endfor %}
     </table>
+<footer id="Footer" style="margin-top: 2%;">
+    <div>
+       <h3 style="margin-left: 2%;"><a href="{% url 'FW:index' %}">Return to menu</a></h3>
+    </div>
+</footer>
 </body>
 </html>
