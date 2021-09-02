@@ -7,8 +7,7 @@
     <title>FootballWRLD</title>
 </head>
 <body>
-<div id="menu-container">
-    <div class="UpperBanner"><h1 class="UpperBannerText">Welcome to FootballWRLD</h1></div>
+    <div class="UpperBanner"><h1>Welcome to FootballWRLD</h1></div>
     <section id="create">
     <div class="Create">
         <h3><a href="{% url 'FW:create_player' %}">Create a player</a></h3>
@@ -17,6 +16,7 @@
         <div class="Create" style="margin-top: 21%">
         <h3><a href="{% url 'FW:create_club' %}">Create a Club</a></h3>
         <h5>Use the filters in order to find a player</h5>
+        </div>
     </section>
     <section id="features">
     <div class="Features">
@@ -42,13 +42,12 @@
         <h5>Use the filters in order to find a player</h5>
     </div>
         </section>
-<footer id="Footer">
-<ul>
-<li style="padding-left: 5%;"><a href="{% url 'FW:index' %}">Return to menu</a></li>
-    <li style="padding-left: 22%;">FootballWRLD <br><center>2021</center></li>
-    <li style="padding-left: 77%; margin-top:-7%;">Soon...</li>
-</ul>
+<footer id="Footer" style="margin-top: 30%">
+<ol>
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li>FootballWRLD <br><center>2021</center></li>
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+</ol>
 </footer>
-    </div>
 </body>
 </html>
