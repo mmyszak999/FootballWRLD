@@ -2,30 +2,27 @@ body{
     background-color: black;
     color: lime;
     font-family: helvetica;
-    min-width: 500px;
 }
 
 h1{
    color: red;
+   position: absolute;
    text-align: center;
    margin-left: 37%;
    font-family: Tahoma;
-   border-radius: 14px 14px 14px 14px;
 }
 
 .Create{
     position: absolute;
-    margin-left: 3%;
+    margin-left:3%;
 }
 
 #create{
-    height: 55%;
+    height: 60%;
     width: 30%;
     position: absolute;
     margin-left: 3%;
-    border: 4px solid orange;
-    border-radius: 14px 14px 14px 14px;
-    margin-top: 2%;
+    border: 1px solid red;
 }
 
 .Features{
@@ -36,11 +33,9 @@ h1{
 #features{
     position: absolute;
     margin-left: 35%;
-    width: 30%;
-    height: 55%;
-    border: 4px solid DeepSkyBlue;
-    border-radius: 14px 14px 14px 14px;
-    margin-top: 2%;
+    width:30%;
+    height: 60%;
+    border: 1px solid blue;
 }
 
 .Databases{
@@ -49,13 +44,12 @@ h1{
  }
 
 #databases{
-    height: 55%;
+    height: 60%;
     width: 30%;
     position: absolute;
     margin-left:67%;
-    border: 4px solid green;
-    border-radius: 14px 14px 14px 14px;
-    margin-top: 2%;
+    border: 1px solid green;
+
 }
 
 h5{
@@ -87,9 +81,21 @@ h2{
 p{
     color: orange;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    width: 40%;
+    width: 54%;
 }
 
+#Footer{
+    position: absolute;
+    color: white;
+    width: 94%;
+    height: 12%;
+    margin-top:13%;
+    margin-left:3%;
+    border: 1px solid orange;
+    font-family: helvetica;
+    font-size: 28px;
+    text-align: center;
+}
 
 .submit-button{
      background: #0066A2;
@@ -99,84 +105,33 @@ p{
      height: 50px;
      width: 100px;
      font: bold 15px arial, sans-serif;
-     text-shadow: none;
-     margin-bottom: 1%;
+     text-shadow:none;
 }
 
 table{
-    border: 3px solid orange;
+    border: 1px solid red;
     width: 90%;
-    margin-left: 5%;
-    margin-bottom: 1%;
+    margin-left: 3%;
 }
 
 th{
-    border: 2px solid orange;
+    border: 1px solid red;
 }
 
 .FilterPlayer{
     width: 77%;
     position: relative;
-    height: 99%;
+    height: 50%;
     text-align: center;
-    border: 5px solid orange;
-    margin-top: 1%;
-    margin-left:22%;
-    margin-bottom: auto;
+    border: 1px solid green;
+
 }
 
 .FilterForm{
     margin-top: 1%;
-    width: 22%;
-    height: 99%;
-    text-align: left;
+    width: 21%;
+    position: relative;
+    height: 50%;
+    text-align:left;
     float: left;
-    margin-bottom: auto;
-    position: relative;
-}
-
-.UpperBanner{
-    position: relative;
-    margin-left: 30%;
-    margin-top: 0.5%;
-    margin-bottom: 1%;
-    width: 40%;
-    border: 5px solid red;
-    border-radius: 140px 140px 50px 50px;
-}
-
-.UpperBanner h1{
-    color: #E99090;
-    margin-left:0.00000001%;
-    padding-bottom: 5px;
-}
-
-#Footer{
-    color: white;
-    width: 98%;
-    height: 14%;
-    margin-left: 1%;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 4px solid purple;
-    font-family: helvetica;
-    font-size: 28px;
-    border-radius: 50px 50px 140px 140px;
-    display: inline-block;
-}
-
-#Footer ol{
-    padding-left: 15.4%;
-    position: relative;
-}
-
-#Footer li{
-    float: left;
-    list-style-type: none;
-    margin: 0 14.0% 0 0;
-    position: relative;
-    }
-
-#FilterContainer{
-    margin-bottom: 1%;
 }

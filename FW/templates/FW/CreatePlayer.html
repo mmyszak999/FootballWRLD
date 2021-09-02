@@ -9,18 +9,12 @@
     <title>Player Creation</title>
 </head>
 <body>
-<div class="UpperBanner"><h1 class="UpperBannerText">Create a player</h1></div>
-    <form action="" method="post" style="margin-top: 1%;">
+<h2>Create a player</h2>
+    <form action="" method="post">
         {% csrf_token %}
         {{form.as_p}}
        <input type="submit" value="Create" class="submit-button">
+
     </form>
-<footer id="Footer">
-<ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-    <li>FootballWRLD <br><center>2021</center></li>
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-</ol>
-</footer>
 </body>
 </html>

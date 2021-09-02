@@ -9,13 +9,10 @@
     <title>Players' filter</title>
 </head>
 <body>
-<section id="FilterContainer">
-<div class="UpperBanner"><h1 class="UpperBannerText">Filters</h1></div>
 <form method="get" class="FilterForm">
     {{ filter.form.as_p }}
     <button type="submit" class="submit-button">Filter</button>
 </form>
-
 <table class="FilterPlayer">
     <tr>
     <th><h3>No.</h3></th>
@@ -32,13 +29,6 @@
     {% endfor %}
     </tr>
 </table>
-</section>
-<footer id="Footer">
-<ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-    <li>FootballWRLD <br><center>2021</center></li>
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-</ol>
-</footer>
+
 </body>
 </html>
