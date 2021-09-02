@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="UpperBanner"><h1 class="UpperBannerText">Clubs Database</h1></div>
-    <table style="margin-top: 1%;">
+    <table style="margin-top: 0.5%;">
         <tr>
             <th><h4>No</h4></th>
             <th><h4>Club</h4></th>
@@ -27,10 +27,12 @@
         <h2> No players available in the database</h2>
     {% endfor %}
     </table>
-<footer id="Footer" style="margin-top: 2%;">
-    <div>
-       <h3 style="margin-left: 2%;"><a href="{% url 'FW:index' %}">Return to menu</a></h3>
-    </div>
-</footer>
+<footer id="Footer">
+<ol id="FooterList">
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li>FootballWRLD <br><center>2021</center></li>
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+</ol>
+</footer>>
 </body>
 </html>

@@ -2,7 +2,7 @@ body{
     background-color: black;
     color: lime;
     font-family: helvetica;
-    min-width: 300px;
+    min-width: 500px;
 }
 
 h1{
@@ -15,7 +15,7 @@ h1{
 
 .Create{
     position: absolute;
-    margin-left:3%;
+    margin-left: 3%;
 }
 
 #create{
@@ -36,7 +36,7 @@ h1{
 #features{
     position: absolute;
     margin-left: 35%;
-    width:30%;
+    width: 30%;
     height: 55%;
     border: 4px solid DeepSkyBlue;
     border-radius: 14px 14px 14px 14px;
@@ -90,19 +90,6 @@ p{
     width: 40%;
 }
 
-#Footer{
-    position: relative;
-    color: white;
-    width: 96%;
-    height: 14%;
-    margin-top: 30%;
-    margin-left:2%;
-    border: 4px solid purple;
-    font-family: helvetica;
-    font-size: 28px;
-    border-radius: 50px 50px 140px 140px;
-    display: inline-block;
-}
 
 .submit-button{
      background: #0066A2;
@@ -112,13 +99,15 @@ p{
      height: 50px;
      width: 100px;
      font: bold 15px arial, sans-serif;
-     text-shadow:none;
+     text-shadow: none;
+     margin-bottom: 1%;
 }
 
 table{
     border: 3px solid orange;
     width: 90%;
     margin-left: 5%;
+    margin-bottom: 1%;
 }
 
 th{
@@ -127,39 +116,67 @@ th{
 
 .FilterPlayer{
     width: 77%;
-    position: absolute;
-    height: 50%;
+    position: relative;
+    height: 99%;
     text-align: center;
     border: 5px solid orange;
     margin-top: 1%;
     margin-left:22%;
-
+    margin-bottom: auto;
 }
 
 .FilterForm{
     margin-top: 1%;
     width: 22%;
-    height: 50%;
-    text-align:left;
+    height: 99%;
+    text-align: left;
     float: left;
+    margin-bottom: auto;
+    position: relative;
 }
 
 .UpperBanner{
+    position: relative;
     margin-left: 30%;
     margin-top: 0.5%;
+    margin-bottom: 1%;
     width: 40%;
     border: 5px solid red;
     border-radius: 140px 140px 50px 50px;
 }
 
-.UpperBannerText{
+.UpperBanner h1{
     color: #E99090;
     margin-left:0.00000001%;
+    padding-bottom: 5px;
 }
 
-li {
+#Footer{
+    color: white;
+    width: 98%;
+    height: 14%;
+    margin-left: 1%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 4px solid purple;
+    font-family: helvetica;
+    font-size: 28px;
+    border-radius: 50px 50px 140px 140px;
+    display: inline-block;
+}
+
+#Footer ol{
+    padding-left: 15.4%;
+    position: relative;
+}
+
+#Footer li{
     float: left;
-    text-decoration: none;
-    padding-top:1%;
-    list-style-type: none
-   }
+    list-style-type: none;
+    margin: 0 14.0% 0 0;
+    position: relative;
+    }
+
+#FilterContainer{
+    margin-bottom: 1%;
+}
