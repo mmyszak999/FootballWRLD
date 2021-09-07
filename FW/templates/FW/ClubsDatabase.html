@@ -9,8 +9,8 @@
     <title>Clubs Database</title>
 </head>
 <body>
-    <div class="UpperBanner"><h1 class="UpperBannerText">Clubs Database</h1></div>
-    <table style="margin-top: 0.5%;">
+    <h2>The list of the clubs in the database: </h2>
+    <table>
         <tr>
             <th><h4>No</h4></th>
             <th><h4>Club</h4></th>
@@ -19,7 +19,7 @@
     {% for club in object_list %}
         <tr>
             <th><h3>{{forloop.counter}}</h3></th>
-            <th><h3><a href="{% url 'FW:club' club.id %}">{{club.club_name}}</a></h3></th>
+            <th><h3><a href="{% url 'FW:Club' club.id %}">{{club.club_name}}</a></h3></th>
             <th><h3>{{club.country}}</h3></th>
         </tr>
     {% empty %}
@@ -27,12 +27,5 @@
         <h2> No players available in the database</h2>
     {% endfor %}
     </table>
-<footer id="Footer">
-<ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-    <li>FootballWRLD <br><center>2021</center></li>
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-</ol>
-</footer>>
 </body>
 </html>

@@ -1,6 +1,4 @@
 from django.db import models
-from django.urls import reverse
-
 
 
 class Club(models.Model):
@@ -33,6 +31,3 @@ class Player(models.Model):
 
     def __str__(self):
         return self.name + " " + self.surname
-
-    def get_absolute_url(self):
-        return reverse("player", kwargs={'pk': self.pk})

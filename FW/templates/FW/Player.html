@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <th><h4>Club</h4></th>
-            <th><h4><a href="{% url 'FW:club' player.club.id %}">{{player.club}}</a></h4></th>
+            <th><h4><a href="{% url 'FW:Club' player.club.id %}">{{player.club}}</a></h4></th>
         </tr>
         <tr>
             <th><h4>Position</h4></th>
@@ -52,12 +52,5 @@
             <th><h4>{{player.foot}}</h4></th>
         </tr>
     </table>
-<footer id="Footer">
-<ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-    <li>FootballWRLD <br><center>2021</center></li>
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
-</ol>
-</footer>
 </body>
 </html>
