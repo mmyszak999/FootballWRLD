@@ -9,14 +9,36 @@
     <title>Players' filter</title>
 </head>
 <body>
+<section id="FilterContainer">
+<div class="UpperBanner"><h1 class="UpperBannerText">Filters</h1></div>
 <form method="get" class="FilterForm">
     {{ filter.form.as_p }}
     <button type="submit" class="submit-button">Filter</button>
 </form>
-<ul class="FilterPlayer">
+
+<table class="FilterPlayer">
+    <tr>
+    <th><h3>No.</h3></th>
+    <th><h3>Player</h3></th>
+    <th><h3>Club</h3></th>
+    <th><h3>Position</h3></th>
+    </tr>
     {% for pl in filter.qs %}
-        <h2>{{forloop.counter}}. <a href="{% url 'FW:player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2>
+    <tr>
+        <th><h2>{{forloop.counter}}</h2></th>
+        <th><h2><a href="{% url 'FW:player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2></th>
+        <th><h2> <a href="{% url 'FW:club' pl.club.id%}">{{pl.club}}</a></h2></th>
+        <th><h2> {{pl.position}}</h2></th>
     {% endfor %}
-</ul>
+    </tr>
+</table>
+</section>
+<footer id="Footer">
+<ol id="FooterList">
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li>FootballWRLD <br><center>2021</center></li>
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+</ol>
+</footer>
 </body>
 </html>
