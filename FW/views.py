@@ -83,7 +83,6 @@ def createplayer(request):
 def createclub(request):
     form = CreateClubForm()
     if request.method == 'POST':
-        print("Printing POST: ", request.POST)
         form = CreateClubForm(request.POST)
         if form.is_valid():
             form.save()

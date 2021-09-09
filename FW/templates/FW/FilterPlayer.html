@@ -15,10 +15,8 @@
 </form>
 <ul class="FilterPlayer">
     {% for pl in filter.qs %}
-
-        <h2>{{forloop.counter}}. <a href="{% url 'FW:Player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2>
+        <h2>{{forloop.counter}}. <a href="{% url 'FW:player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2>
     {% endfor %}
 </ul>
-
 </body>
 </html>
