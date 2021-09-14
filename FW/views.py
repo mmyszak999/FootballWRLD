@@ -92,6 +92,21 @@ def get_random_player(request):
 
 
 def draft(request):
-    players = list(Player.objects.all())
-    random_players = random.sample(players, 5)
-    return render(request, "FW/Draft.html", {'random_players': random_players})
+    players_gk = list(Player.objects.filter(position="GK"))
+    random_gk = random.sample(players_gk, 5)
+    players_def = list(Player.objects.filter(position="DEF"))
+    random_def = random.sample(players_def, 5)
+    players_mid = list(Player.objects.filter(position="MID"))
+    random_mid = random.sample(players_mid, 5)
+    players_att = list(Player.objects.filter(position="ATT"))
+    random_att = random.sample(players_att, 5)
+    player_last_slot = list(Player.objects.exclude(position="GK"))
+    random_last_slot = random.sample(player_last_slot, 5)
+    context = {
+        "random_gk": random_gk,
+        "random_def": random_def,
+        "random_mid": random_mid,
+        "random_att": random_att,
+        "random_last_slot": random_last_slot,
+    }
+    return render(request, "FW/Draft.html", context)
