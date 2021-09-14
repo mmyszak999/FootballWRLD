@@ -10,6 +10,14 @@
 </head>
 <body>
 <div class="UpperBanner"><h1 class="UpperBannerText">Draft</h1></div>
+
+<label>Choose a player:</label>
+<select>
+{% for pl in random_players %}
+<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+
 <footer id="Footer">
 <ol id="FooterList">
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>

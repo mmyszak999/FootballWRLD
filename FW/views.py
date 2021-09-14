@@ -21,13 +21,6 @@ class CreatePlayerView(generic.ListView):
         return True
 
 
-class DraftView(generic.ListView):
-    template_name = 'FW/Draft.html'
-
-    def get_queryset(self):
-        return True
-
-
 class FilterView(generic.ListView):
     model = Player
     template_name = 'FW/FilterPlayer.html'
@@ -96,3 +89,9 @@ def get_random_player(request):
     random_player = random.choice(Player.objects.all())
     player = Player.objects.get(id=random_player.id)
     return render(request, "FW/Player.html", {"player": player})
+
+
+def draft(request):
+    players = list(Player.objects.all())
+    random_players = random.sample(players, 5)
+    return render(request, "FW/Draft.html", {'random_players': random_players})
