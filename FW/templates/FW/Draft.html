@@ -13,34 +13,7 @@
 
 <label>Choose a Goalkeeper:</label>
 <select>
-{% for pl in random_gk %}
-<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
-{% endfor %}
-</select>
-
-<label>Choose a Defender:</label>
-<select>
-{% for pl in random_def %}
-<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
-    {% endfor %}</select>
-
-<label>Choose a Midfielder:</label>
-<select>
-{% for pl in random_mid %}
-<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
-{% endfor %}
-</select>
-
-<label>Choose an Attacker:</label>
-<select>
-{% for pl in random_att %}
-<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
-{% endfor %}
-</select>
-
-<label>Choose a last slot player:</label>
-<select>
-{% for pl in random_last_slot %}
+    {% for pl in all_gk %}
 <option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
@@ -52,5 +25,6 @@
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
 </ol>
 </footer>
+
 </body>
 </html>

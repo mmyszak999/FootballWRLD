@@ -4,7 +4,7 @@ from django.views import generic
 from .forms import *
 from .filters import PlayerFilter
 
-import random
+import random, pickle
 
 
 class IndexView(generic.ListView):
@@ -91,22 +91,24 @@ def get_random_player(request):
     return render(request, "FW/Player.html", {"player": player})
 
 
+def id_list(max_number):
+    x = []
+    counter = 0
+    for p in range(1, max_number + 1):
+        x.append(p)
+        counter += 1
+    return x
+
+
 def draft(request):
-    players_gk = list(Player.objects.filter(position="GK"))
-    random_gk = random.sample(players_gk, 5)
-    players_def = list(Player.objects.filter(position="DEF"))
-    random_def = random.sample(players_def, 5)
-    players_mid = list(Player.objects.filter(position="MID"))
-    random_mid = random.sample(players_mid, 5)
-    players_att = list(Player.objects.filter(position="ATT"))
-    random_att = random.sample(players_att, 5)
-    player_last_slot = list(Player.objects.exclude(position="GK"))
-    random_last_slot = random.sample(player_last_slot, 5)
+    list_id = id_list(60)
+    all_players = Player.objects.all()
+    all_gk = all_players.filter(position="GK")
+
     context = {
-        "random_gk": random_gk,
-        "random_def": random_def,
-        "random_mid": random_mid,
-        "random_att": random_att,
-        "random_last_slot": random_last_slot,
+        "all_players": all_players,
+        "all_gk": all_gk,
+        "list_id": list_id,
     }
+
     return render(request, "FW/Draft.html", context)
