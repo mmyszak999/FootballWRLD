@@ -13,8 +13,30 @@
 
 <label>Choose a Goalkeeper:</label>
 <select>
-    {% for pl in all_gk %}
-<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+    {% for pl in random_gk %}
+<option value="">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+
+
+<label>Choose a Defender:</label>
+<select>
+    {% for pl in random_def %}
+<option value="">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+
+<label>Choose a Midfielder:</label>
+<select>
+    {% for pl in random_mid %}
+<option value="">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+
+<label>Choose a Attacker:</label>
+<select>
+    {% for pl in random_att %}
+<option value="">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
 

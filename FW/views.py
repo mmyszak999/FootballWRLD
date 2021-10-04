@@ -4,7 +4,7 @@ from django.views import generic
 from .forms import *
 from .filters import PlayerFilter
 
-import random, pickle
+import random
 
 
 class IndexView(generic.ListView):
@@ -100,14 +100,39 @@ def id_list(max_number):
     return x
 
 
+def random_five_players(pl_list):
+    random_list = []
+    counter = 0
+    while counter != 5:
+        random_id = random.choice(pl_list)
+        if random_id in random_list:
+            continue
+        else:
+            random_list.append(random_id)
+            counter += 1
+    return random_list
+
+
 def draft(request):
-    list_id = id_list(60)
+    id_amount = Player.objects.count()
+    list_id = id_list(id_amount)
     all_players = Player.objects.all()
-    all_gk = all_players.filter(position="GK")
+
+    all_gk = all_players.filter(position="GK").values("id", "name", "surname")
+    all_def = all_players.filter(position="DEF").values("id", "name", "surname")
+    all_mid = all_players.filter(position="MID").values("id", "name", "surname")
+    all_att = all_players.filter(position="ATT").values("id", "name", "surname")
+
+    random_gk = random_five_players(all_gk)
+    random_def = random_five_players(all_def)
+    random_mid = random_five_players(all_mid)
+    random_att = random_five_players(all_att)
 
     context = {
-        "all_players": all_players,
-        "all_gk": all_gk,
+        "random_gk": random_gk,
+        "random_def": random_def,
+        "random_mid": random_mid,
+        "random_att": random_att,
         "list_id": list_id,
     }
 
