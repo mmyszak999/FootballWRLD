@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect
 from django.views import generic
 
 from .forms import *
@@ -113,27 +113,47 @@ def random_five_players(pl_list):
     return random_list
 
 
+def delete_ids(main_list, list_to_delete):
+    for number in range(0, 5):
+        main_list.remove(list_to_delete[number]["id"])
+    return main_list
+
+
 def draft(request):
     id_amount = Player.objects.count()
     list_id = id_list(id_amount)
     all_players = Player.objects.all()
 
     all_gk = all_players.filter(position="GK").values("id", "name", "surname")
-    all_def = all_players.filter(position="DEF").values("id", "name", "surname")
-    all_mid = all_players.filter(position="MID").values("id", "name", "surname")
-    all_att = all_players.filter(position="ATT").values("id", "name", "surname")
-
     random_gk = random_five_players(all_gk)
+    delete_ids(list_id, random_gk)
+
+    all_def = all_players.filter(position="DEF").values("id", "name", "surname")
     random_def = random_five_players(all_def)
+    delete_ids(list_id, random_def)
+
+    all_mid = all_players.filter(position="MID").values("id", "name", "surname")
     random_mid = random_five_players(all_mid)
+    delete_ids(list_id, random_mid)
+
+    all_att = all_players.filter(position="ATT").values("id", "name", "surname")
     random_att = random_five_players(all_att)
+    delete_ids(list_id, random_att)
+
+    last_slot_players = all_players.filter(id__in=list_id).values("id", "name", "surname").exclude(position="GK")
+    random_last_slot_players = random_five_players(last_slot_players)
+    delete_ids(list_id, random_last_slot_players)
+
+    test = all_players.filter(id__in=list_id)
 
     context = {
         "random_gk": random_gk,
         "random_def": random_def,
         "random_mid": random_mid,
         "random_att": random_att,
+        "random_last_slot_players": random_last_slot_players,
         "list_id": list_id,
+        "test": test,
     }
 
     return render(request, "FW/Draft.html", context)
