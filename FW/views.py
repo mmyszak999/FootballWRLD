@@ -43,6 +43,9 @@ class ClubView(generic.DetailView):
     model = Club
     template_name = 'FW/Club.html'
 
+    def get_queryset(self):
+        return Club.objects.all()
+
 
 class PlayersDatabaseView(generic.ListView):
     model = Player

@@ -25,6 +25,9 @@
             <th><h4>{{club.country}}</h4></th>
         </tr>
     </table>
+{% for pl in Player%}
+    <p>{{pl.surname}}</p>
+    {% endfor %}
 <footer id="Footer">
 <ol id="FooterList">
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
