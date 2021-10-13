@@ -9,46 +9,56 @@
     <title>Draft</title>
 </head>
 <body>
+
 <div class="UpperBanner"><h1 class="UpperBannerText">Draft</h1></div>
 
-<label>Choose a Goalkeeper:</label>
+<div class="DraftChoices">
+    <div class="DraftSingleChoice">
+<label><h4>Choose a Goalkeeper:</h4></label>
 <select>
     {% for pl in random_gk %}
 <option value="">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
+        </div>
 
-
-<label>Choose a Defender:</label>
+<div class="DraftSingleChoice">
+    <label><h4>Choose a Defender:</h4></label>
 <select>
     {% for pl in random_def %}
 <option value="">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
+</div>
 
-</br></br>
-
-<label>Choose a Midfielder:</label>
+    <div class="DraftSingleChoice">
+<label><h4>Choose a Midfielder:</h4></label>
 <select>
     {% for pl in random_mid %}
 <option value="">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
+    </div>
 
-<label>Choose a Attacker:</label>
+    <div class="DraftSingleChoice">
+<label><h4>Choose an Attacker:</h4></label>
 <select>
     {% for pl in random_att %}
 <option value="">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
+    </div>
 
-<label>Choose a Last slot player:</label>
+    <div class="DraftSingleChoice">
+<label><h4>Choose an last slot player:</h4></label>
 <select>
     {% for pl in random_last_slot_players %}
 <option value="">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
+</div>
 
+</div>
 <footer id="Footer">
 <ol id="FooterList">
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
