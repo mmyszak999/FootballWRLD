@@ -111,6 +111,11 @@ table{
 
 th{
     border: 2px solid orange;
+    color: white;
+}
+
+tr{
+    color: white;
 }
 
 .FilterPlayer{
