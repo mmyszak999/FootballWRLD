@@ -147,8 +147,6 @@ def draft(request):
     random_last_slot_players = random_five_players(last_slot_players)
     delete_ids(list_id, random_last_slot_players)
 
-    test = all_players.filter(id__in=list_id)
-
     context = {
         "random_gk": random_gk,
         "random_def": random_def,
@@ -156,7 +154,24 @@ def draft(request):
         "random_att": random_att,
         "random_last_slot_players": random_last_slot_players,
         "list_id": list_id,
-        "test": test,
     }
 
     return render(request, "FW/Draft.html", context)
+
+
+def draft_results(request):
+    gk = request.GET['gk']
+    df = request.GET['df']
+    mid = request.GET['mid']
+    att = request.GET['att']
+    ran = request.GET['ran']
+    list_ = [gk, df, mid, att, ran]
+    list_players = Player.objects.filter(id__in=list_).order_by('club_id')
+    context = {'gk': gk,
+               'df': df,
+               'mid': mid,
+               'att': att,
+               'ran': ran,
+               'list_players': list_players}
+
+    return render(request, "FW/DraftResults.html", context)

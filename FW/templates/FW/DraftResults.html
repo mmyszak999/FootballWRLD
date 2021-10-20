@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'FW/style.css' %}">
+    <title>Draft</title>
+</head>
+<body>
+
+<div class="UpperBanner"><h1 class="UpperBannerText">Draft</h1></div>
+<div id="DraftResult"></div>
+<h2><center>Your team</center></h2>
+<table>
+{% for p in list_players %}
+    <tr>
+    <th><h3>{{p.position}}</h3></th>
+<th><h3><a href="{% url 'FW:player' p.id %}">{{p.name}} {{p.surname}}</a></h3></th>
+<th><h3><a href="{% url 'FW:club' p.club.id %}">{{p.club}}</a></h3></th>
+    </tr>
+{% endfor %}
+</table>
+
+<h2><center><a href="{% url 'FW:draft' %}">New draft</a></center></h2>
+<footer id="Footer">
+<ol id="FooterList">
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li>FootballWRLD <br><center>2021</center></li>
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+</ol>
+</footer>
+
