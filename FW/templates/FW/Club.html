@@ -10,7 +10,6 @@
 </head>
 <body>
     <h2>{{club.club_name}}</h2>
-    <br>
     <table>
         <tr>
             <th><h4>Club Name</h4></th>
@@ -25,9 +24,25 @@
             <th><h4>{{club.country}}</h4></th>
         </tr>
     </table>
-{% for pl in Player%}
-    <p>{{pl.surname}}</p>
+    <table style="margin-top: 1%";>
+        <h2> Players in the club: </h2>
+        <tr>
+            <th><h4>No</h4></th>
+            <th><h4>Player</h4></th>
+            <th><h4>Country</h4></th>
+            <th><h4>Position</h4></th>
+        </tr>
+    {% for pl in Player %}
+        <tr>
+            <th><h3>{{forloop.counter}}</h3></th>
+            <th><h3><a href="{% url 'FW:player' pl.id %}">{{pl.name}} {{pl.surname}} </a></h3></th>
+            <th><h3>{{pl.nationality}}</h3></th>
+            <th><h3>{{pl.position}}</h3></th>
+        </tr>
+    {% empty %}
+        <h2> No players available in the database</h2>
     {% endfor %}
+    </table>
 <footer id="Footer">
 <ol id="FooterList">
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>

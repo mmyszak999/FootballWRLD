@@ -43,8 +43,10 @@ class ClubView(generic.DetailView):
     model = Club
     template_name = 'FW/Club.html'
 
-    def get_queryset(self):
-        return Club.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Player'] = Player.objects.filter(club_id=self.kwargs['pk'])
+        return context
 
 
 class PlayersDatabaseView(generic.ListView):
