@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect
 from django.views import generic
 
 from .forms import *
@@ -42,6 +42,9 @@ class PlayerView(generic.DetailView):
 class ClubView(generic.DetailView):
     model = Club
     template_name = 'FW/Club.html'
+
+    def get_queryset(self):
+        return Club.objects.all()
 
 
 class PlayersDatabaseView(generic.ListView):
@@ -91,7 +94,84 @@ def get_random_player(request):
     return render(request, "FW/Player.html", {"player": player})
 
 
+def id_list(max_number):
+    x = []
+    counter = 0
+    for p in range(1, max_number + 1):
+        x.append(p)
+        counter += 1
+    return x
+
+
+def random_five_players(pl_list):
+    random_list = []
+    counter = 0
+    while counter != 5:
+        random_id = random.choice(pl_list)
+        if random_id in random_list:
+            continue
+        else:
+            random_list.append(random_id)
+            counter += 1
+    return random_list
+
+
+def delete_ids(main_list, list_to_delete):
+    for number in range(0, 5):
+        main_list.remove(list_to_delete[number]["id"])
+    return main_list
+
+
 def draft(request):
-    players = list(Player.objects.all())
-    random_players = random.sample(players, 5)
-    return render(request, "FW/Draft.html", {'random_players': random_players})
+    id_amount = Player.objects.count()
+    list_id = id_list(id_amount)
+    all_players = Player.objects.all()
+
+    all_gk = all_players.filter(position="GK").values("id", "name", "surname")
+    random_gk = random_five_players(all_gk)
+    delete_ids(list_id, random_gk)
+
+    all_def = all_players.filter(position="DEF").values("id", "name", "surname")
+    random_def = random_five_players(all_def)
+    delete_ids(list_id, random_def)
+
+    all_mid = all_players.filter(position="MID").values("id", "name", "surname")
+    random_mid = random_five_players(all_mid)
+    delete_ids(list_id, random_mid)
+
+    all_att = all_players.filter(position="ATT").values("id", "name", "surname")
+    random_att = random_five_players(all_att)
+    delete_ids(list_id, random_att)
+
+    last_slot_players = all_players.filter(id__in=list_id).values("id", "name", "surname").exclude(position="GK")
+    random_last_slot_players = random_five_players(last_slot_players)
+    delete_ids(list_id, random_last_slot_players)
+
+    context = {
+        "random_gk": random_gk,
+        "random_def": random_def,
+        "random_mid": random_mid,
+        "random_att": random_att,
+        "random_last_slot_players": random_last_slot_players,
+        "list_id": list_id,
+    }
+
+    return render(request, "FW/Draft.html", context)
+
+
+def draft_results(request):
+    gk = request.GET['gk']
+    df = request.GET['df']
+    mid = request.GET['mid']
+    att = request.GET['att']
+    ran = request.GET['ran']
+    list_ = [gk, df, mid, att, ran]
+    list_players = Player.objects.filter(id__in=list_).order_by('club_id')
+    context = {'gk': gk,
+               'df': df,
+               'mid': mid,
+               'att': att,
+               'ran': ran,
+               'list_players': list_players}
+
+    return render(request, "FW/DraftResults.html", context)

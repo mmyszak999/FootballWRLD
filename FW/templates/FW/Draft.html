@@ -9,14 +9,60 @@
     <title>Draft</title>
 </head>
 <body>
+
 <div class="UpperBanner"><h1 class="UpperBannerText">Draft</h1></div>
 
-<label>Choose a player:</label>
-<select>
-{% for pl in random_players %}
+<form action="{% url 'FW:draft_results' %}" method="get">
+    {% csrf_token %}
+<div class="DraftChoices">
+    <div class="DraftSingleChoice">
+<label><h4>Choose a Goalkeeper:</h4></label>
+<select name="gk">
+    {% for pl in random_gk %}
 <option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
 {% endfor %}
 </select>
+        </div>
+
+<div class="DraftSingleChoice">
+    <label><h4>Choose a Defender:</h4></label>
+<select name="df">
+    {% for pl in random_def %}
+<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+</div>
+
+    <div class="DraftSingleChoice">
+<label><h4>Choose a Midfielder:</h4></label>
+<select name="mid">
+    {% for pl in random_mid %}
+<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+    </div>
+
+    <div class="DraftSingleChoice">
+<label><h4>Choose an Attacker:</h4></label>
+<select name="att">
+    {% for pl in random_att %}
+<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+    </div>
+
+    <div class="DraftSingleChoice">
+<label><h4>Choose an extra player:</h4></label>
+<select name="ran">
+    {% for pl in random_last_slot_players %}
+<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+{% endfor %}
+</select>
+</div>
+    <button type="submit" class="submit-button">Build</button>
+</div>
+
+</form>
 
 <footer id="Footer">
 <ol id="FooterList">
@@ -25,5 +71,6 @@
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
 </ol>
 </footer>
+
 </body>
 </html>
