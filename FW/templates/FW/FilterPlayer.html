@@ -28,14 +28,14 @@
         <th><h2>{{forloop.counter}}</h2></th>
         <th><h2><a href="{% url 'FW:player' pl.id%}">{{pl.name}} {{pl.surname}}</a></h2></th>
         <th><h2> <a href="{% url 'FW:club' pl.club.id%}">{{pl.club}}</a></h2></th>
-        <th><h2> {{pl.position}}</h2></th>
+        <th><h2> {{pl.get_position_display}}</h2></th>
     {% endfor %}
     </tr>
 </table>
 </section>
 <footer id="Footer">
 <ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li><a href="{% url 'FW:help' %}">Get some help</a></li>
     <li>FootballWRLD <br><center>2021</center></li>
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
 </ol>

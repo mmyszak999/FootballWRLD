@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <th><h4>Position</h4></th>
-            <th><h4>{{player.position}}</h4></th>
+            <th><h4>{{player.get_position_display}}</h4></th>
         </tr>
     </table>
     <br>
@@ -54,7 +54,7 @@
     </table>
 <footer id="Footer">
 <ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li><a href="{% url 'FW:help' %}">Get some help</a></li>
     <li>FootballWRLD <br><center>2021</center></li>
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
 </ol>

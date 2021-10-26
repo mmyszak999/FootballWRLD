@@ -16,7 +16,7 @@
 <table>
 {% for p in list_players %}
     <tr>
-    <th><h3>{{p.position}}</h3></th>
+    <th><h3>{{p.get_position_display}}</h3></th>
 <th><h3><a href="{% url 'FW:player' p.id %}">{{p.name}} {{p.surname}}</a></h3></th>
 <th><h3><a href="{% url 'FW:club' p.club.id %}">{{p.club}}</a></h3></th>
     </tr>
@@ -26,7 +26,7 @@
 <h2><center><a href="{% url 'FW:draft' %}">New draft</a></center></h2>
 <footer id="Footer">
 <ol id="FooterList">
-    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+    <li><a href="{% url 'FW:help' %}">Get some help</a></li>
     <li>FootballWRLD <br><center>2021</center></li>
     <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
 </ol>

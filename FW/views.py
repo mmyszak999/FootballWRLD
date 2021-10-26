@@ -177,3 +177,7 @@ def draft_results(request):
                'list_players': list_players}
 
     return render(request, "FW/DraftResults.html", context)
+
+
+def help_site(request):
+    return render(request, "FW/Help.html")
