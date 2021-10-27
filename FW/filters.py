@@ -8,8 +8,8 @@ class PlayerFilter(django_filters.FilterSet):
     class Meta:
         model = Player
         fields = {
-            'name': ['exact', 'icontains'],
-            'surname': ['exact', 'icontains'],
+            'name': ['iexact', 'icontains'],
+            'surname': ['iexact', 'icontains'],
             'nationality': ['exact'],
             'year_of_birth': ['exact', 'lt', 'gt'],
             'club': ['exact'],

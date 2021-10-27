@@ -55,7 +55,7 @@
 <label><h4>Choose an extra player:</h4></label>
 <select name="ran">
     {% for pl in random_last_slot_players %}
-<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}</option>
+<option value="{{pl.id}}">{{pl.name}} {{pl.surname}}  ---> {{pl.position}}</option>
 {% endfor %}
 </select>
 </div>

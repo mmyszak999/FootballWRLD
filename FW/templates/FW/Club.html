@@ -37,7 +37,7 @@
             <th><h3>{{forloop.counter}}</h3></th>
             <th><h3><a href="{% url 'FW:player' pl.id %}">{{pl.name}} {{pl.surname}} </a></h3></th>
             <th><h3>{{pl.nationality}}</h3></th>
-            <th><h3>{{pl.position}}</h3></th>
+            <th><h3>{{pl.get_position_display}}</h3></th>
         </tr>
     {% empty %}
         <h2> No players available in the database</h2>

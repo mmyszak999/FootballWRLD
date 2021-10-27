@@ -9,7 +9,72 @@
     <title>Help</title>
 </head>
 <body>
-<body>
-df
+<div class="UpperBanner"><h1>Help</h1></div>
+<div class="HelpH4">
+<h2><a href ="{% url 'FW:create_club' %}">Create a club</a></h2>
+    <h4><b>Club name</b> - type the club name you want to create ( real or fictional - whichever you want )</h4>
+    <h4><b>Foundation date</b> - type the year of the club foundation (positive integer)</h4>
+    <h4><b>Country</b> - type the native club country</h4>
+
+<h2><a href ="{% url 'FW:create_player' %}">Create a player</a></h2>
+    <h4><b>Name</b> and <b>surname</b> - type the name and surname of the player in 2 fields (if player do not
+    have a surname, leave <b>surname</b> field empty</h4>
+    <h4><b>Nationality</b> - type the nationality of the player</h4>
+    <h4><b>Year of birth</b> - type the year of birth of player (positive integer)</h4>
+    <h4><b>Club</b> - click the drop-down list and pick one of the available clubs, which player will belong to</h4>
+    <h4><b>Position</b> - click the drop-down list and pick the player's position </h4>
+    <h4><b>Height</b> - type the height of the player in <b>centimeters</b> (positive integer)</h4>
+    <h4><b>Weight</b> - type the weight of the player in <b>kilograms</b> (positive integer)</h4>
+    <h4><b>Foot</b> - click the drop-down list and pick the player's better foot</h4>
+
+<h2><a href ="{% url 'FW:random_player' %}">Draw a random player</a></h2>
+<h4>The site draws one player from the database. In order to draw another random player, you should press <b>F5</b>
+    button on your keyboard or click the <b>refresh</b> button in your browser</h4>
+
+<h2><a href ="{% url 'FW:filter_player' %}">Filter players</a></h2>
+<h3>Available filters:</h3>
+<h4><b>Name</b> - Filter a player/players with typed name (name can start with lowercase)</h4>
+<h4><b>Name contains </b> - Filter a player/players, whose name contains the typed phrase</h4>
+<h4><b>Surname</b> - Filter a player/players with typed surname (surname can start with lowercase)</h4>
+<h4><b>Surname contains </b> - Filter a player/players, whose surname contains the typed phrase</h4>
+<h4><b>Nationality</b> - Filter a player/players with typed nationality</h4>
+<h4><b>Year of birth</b> - Filter a player/players with typed year of birth value (positive integer)</h4>
+<h4><b>Year of birth is less than</b> - Filter a player/players, whose year of birth is lower than typed value
+    (positive integer)</h4>
+<h4><b>Year of birth is greater than</b> - Filter a player/players, whose year of birth is greater than typed value
+    (positive integer)</h4>
+<h4><b>Club</b> Filter a player/players, who belong to the club picked from the drop-down list</h4>
+<h4><b>Position</b> Filter a player/players, who play/s at the position indicated from the drop-down list</h4>
+<h4><b>Height</b> - Filter a player/players with typed height value (positive integer)</h4>
+<h4><b>Height is less than</b> - Filter a player/players, whose height is lower than typed value
+    (positive integer)</h4>
+<h4><b>Height is greater than</b> - Filter a player/players, whose height is greater than typed value
+    (positive integer)</h4>
+<h4><b>Weight</b> - Filter a player/players with typed weight value (positive integer)</h4>
+<h4><b>Weight is less than</b> - Filter a player/players, whose weight is lower than typed value
+    (positive integer)</h4>
+<h4><b>Weight is greater than</b> - Filter a player/players, whose weight is greater than typed value
+    (positive integer)</h4>
+<h4><b>Foot</b> - Filter a player/players, whose the better foot is the indicated one</h4><br>
+<h4>You can get the filter results by clicking blue <b>Filter</b> button under the filters or by pressing <b>Enter</b>
+    on your keyboard.<br> Filter results (if exist) appear as a table on the right side, after the filter run</h4>
+
+<h2><a href ="{% url 'FW:draft' %}">Draft</a></h2>
+    <h4>In draft, there are 5 player slots. You can pick only 1 player from each slot.
+    During the first four slots, you pick one player for one position (goalkeeper, defender, midfielder and attacker)</h4>
+    <h4>The last slot include the players, who were not picked before (except for goalkeepers - you do not need 2)</h4>
+    <h4>When you select the players, click blue button <b>Build</b> and you will see your team in the table</h4>
+
+    <h2><a href ="{% url 'FW:clubs_database' %}">Clubs database</a> and <a href ="{% url 'FW:players_database' %}">Players database</a></h2>
+    <h4>You do not need help here - it's just the table filled with clubs/players</h4>
+    <h4>If you click the club/player name, you will get some more info about it</h4>
+</div>
+<footer id="Footer">
+<ol>
+    <li><a href="{% url 'FW:help' %}">Get some help</a></li>
+    <li>FootballWRLD <br><center>2021</center></li>
+    <li><a href="{% url 'FW:index' %}">Return to menu</a></li>
+</ol>
+</footer>
 </body>
 </html>

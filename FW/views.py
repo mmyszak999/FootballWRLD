@@ -129,23 +129,23 @@ def draft(request):
     list_id = id_list(id_amount)
     all_players = Player.objects.all()
 
-    all_gk = all_players.filter(position="GK").values("id", "name", "surname")
+    all_gk = all_players.filter(position="GK").values("id", "name", "surname", "position")
     random_gk = random_five_players(all_gk)
     delete_ids(list_id, random_gk)
 
-    all_def = all_players.filter(position="DEF").values("id", "name", "surname")
+    all_def = all_players.filter(position="DEF").values("id", "name", "surname", "position")
     random_def = random_five_players(all_def)
     delete_ids(list_id, random_def)
 
-    all_mid = all_players.filter(position="MID").values("id", "name", "surname")
+    all_mid = all_players.filter(position="MID").values("id", "name", "surname", "position")
     random_mid = random_five_players(all_mid)
     delete_ids(list_id, random_mid)
 
-    all_att = all_players.filter(position="ATT").values("id", "name", "surname")
+    all_att = all_players.filter(position="ATT").values("id", "name", "surname", "position")
     random_att = random_five_players(all_att)
     delete_ids(list_id, random_att)
 
-    last_slot_players = all_players.filter(id__in=list_id).values("id", "name", "surname").exclude(position="GK")
+    last_slot_players = all_players.filter(id__in=list_id).values("id", "name", "surname", "position").exclude(position="GK")
     random_last_slot_players = random_five_players(last_slot_players)
     delete_ids(list_id, random_last_slot_players)
 
